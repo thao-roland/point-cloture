@@ -1,0 +1,168 @@
+/* Point Cloture - shared styles */
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Open Sans', system-ui, sans-serif;
+  color: #1A1A1A;
+  background-color: #F7F6F4;
+  font-size: 16px;
+  line-height: 1.6;
+}
+h1, h2, h3, h4, h5 { font-family: 'Montserrat', system-ui, sans-serif; letter-spacing: -0.01em; }
+
+.nav-link {
+  position: relative;
+  padding: 0.5rem 0;
+  color: #1A1A1A;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background-color: #B0533A;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-link.active { color: #B0533A; }
+
+.btn-primary {
+  background-color: #B0533A;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.85rem 1.6rem;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+  display: inline-block;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background-color: #974227; }
+
+.btn-outline {
+  background-color: transparent;
+  color: #1A1A1A;
+  font-weight: 600;
+  padding: 0.7rem 1.4rem;
+  border-radius: 3px;
+  border: 1.5px solid #1A1A1A;
+  transition: all 0.2s ease;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+.btn-outline:hover { background-color: #1A1A1A; color: #fff; }
+
+.section-title { font-size: 2rem; font-weight: 700; color: #2C2C2C; margin-bottom: 0.5rem; }
+.section-subtitle { color: #5a5a5a; font-size: 1.05rem; margin-bottom: 2.5rem; }
+.section-eyebrow {
+  color: #B0533A;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #E5E2DD;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+
+.product-img { width: 100%; height: 220px; object-fit: cover; display: block; }
+
+.gallery-img { width: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.gallery-item { overflow: hidden; border-radius: 4px; }
+.gallery-item:hover .gallery-img { transform: scale(1.04); }
+
+.input, .textarea, .select {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #d4d1cb;
+  border-radius: 3px;
+  background-color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #1A1A1A;
+  transition: border-color 0.15s ease;
+}
+.input:focus, .textarea:focus, .select:focus {
+  outline: none;
+  border-color: #B0533A;
+  box-shadow: 0 0 0 3px rgba(176, 83, 58, 0.12);
+}
+.form-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  color: #2C2C2C;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.star { color: #f5b942; }
+
+.hero-overlay { background: linear-gradient(90deg, rgba(26,26,26,0.7) 0%, rgba(26,26,26,0.45) 50%, rgba(26,26,26,0.2) 100%); }
+
+.top-bar { background-color: #2C2C2C; color: #e8e8e8; font-size: 0.85rem; }
+.top-bar a { color: #e8e8e8; }
+.top-bar a:hover { color: #fff; }
+
+.mobile-menu { display: none; }
+.mobile-menu.open { display: block; }
+
+.page-header {
+  background-color: #2C2C2C;
+  color: #fff;
+  padding: 3.5rem 0 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=1920&q=60');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+}
+.page-header > * { position: relative; }
+.breadcrumb { font-size: 0.85rem; color: #c8c8c8; }
+.breadcrumb a { color: #c8c8c8; }
+.breadcrumb a:hover { color: #fff; }
+
+.spec-list { list-style: none; padding: 0; margin: 0; }
+.spec-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee5e0;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+.spec-list li::before {
+  content: '';
+  width: 6px; height: 6px;
+  background-color: #B0533A;
+  border-radius: 50%;
+  margin-top: 0.55rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .section-title { font-size: 1.6rem; }
+  .hero-title { font-size: 1.9rem !important; }
+}
